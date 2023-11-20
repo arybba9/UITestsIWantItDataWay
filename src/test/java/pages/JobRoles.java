@@ -1,8 +1,10 @@
+package test.java.pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HelloWorldPage {
+public class JobRoles {
 
     public static WebElement JobRoles(WebDriver driver) {
         WebElement element = driver.findElement(By.linkText("Job Roles"));
@@ -27,6 +29,7 @@ public class HelloWorldPage {
 
 
 //--------------------------------------------------------------------------------------------
+
 
     // Click on these WebElements ---------------------------------------
 
