@@ -7,38 +7,39 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
-    private static WebElement logInButton(WebDriver driver){
-        return driver.findElement(By.xpath("//a[@class='btn btn-outline-secondary me-2']"));
+    public LoginPage(WebDriver driver){
+        super(driver);
     }
-    private static WebElement emailField(WebDriver driver) {
-        return driver.findElement(By.id("email"));
+    private WebElement logInButton(){
+        return this.driver.findElement(By.xpath("//a[@class='btn btn-outline-secondary me-2']"));
     }
-    private static WebElement passwordField(WebDriver driver) {
-        return driver.findElement(By.id("password"));
+    private  WebElement emailField() {
+        return this.driver.findElement(By.id("email"));
     }
-    private static WebElement submit(WebDriver driver) {
-        return driver.findElement(By.xpath("//*[@id='register']/div/form/button"));
+    private  WebElement passwordField() {
+        return this.driver.findElement(By.id("password"));
     }
-    private static WebElement alertCredentialCouldNotBeAuthenticated(WebDriver driver) {
-        return driver.findElement(By.xpath("/html/body/main/section/div/div"));
+    private WebElement submit() {
+        return this.driver.findElement(By.xpath("//*[@id='register']/div/form/button"));
+    }
+    private WebElement alertCredentialCouldNotBeAuthenticated() {
+        return this.driver.findElement(By.xpath("/html/body/main/section/div/div"));
     }
     //-----------------------------------------------------------------------------//
 
-   public void clickOnLogInButton(WebDriver driver){
-        logInButton(driver).click();
+   public void clickOnLogInButton(){
+        logInButton().click();
    }
-    public void enterCredentialsAndClickSubmit(WebDriver driver, String email, String password) {
-        emailField(driver).sendKeys(email);
-        passwordField(driver).sendKeys(password);
-        submit(driver).click();
+    public void enterCredentialsAndClickSubmit(String email, String password) {
+        emailField().sendKeys(email);
+        passwordField().sendKeys(password);
+        submit().click();
 
     }
-    public void assertAlertCredentialCouldNotBeAuthenticated(WebDriver driver, String authenticationAlert) {
-        alertCredentialCouldNotBeAuthenticated(driver).getText();
-        Assert.assertEquals(authenticationAlert, "The provided credentials could not be authenticated");
-
+    public String getTextAlert() {
+        return alertCredentialCouldNotBeAuthenticated().getText();
 
     }
 }
