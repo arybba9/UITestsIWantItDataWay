@@ -37,7 +37,7 @@ public class LoginTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         HomePage home = new HomePage(driver);
-        Assert.assertEquals("Hello World", home.assertionHelloWorld());
+        Assert.assertEquals("Hello World", home.getHelloWorldLink());
 
     }
 @Test

@@ -15,6 +15,9 @@ public class LoginPage extends BasePage {
     private WebElement logInButton(){
         return this.driver.findElement(By.xpath("//a[@class='btn btn-outline-secondary me-2']"));
     }
+    private WebElement loginTitle() {
+        return this.driver.findElement(By.xpath("//*[@id='register']/h2"));
+    }
     private  WebElement emailField() {
         return this.driver.findElement(By.id("email"));
     }
@@ -31,6 +34,9 @@ public class LoginPage extends BasePage {
 
    public void clickOnLogInButton(){
         logInButton().click();
+   }
+   public String getLoginTitle() {
+        return loginTitle().getText();
    }
     public void enterCredentialsAndClickSubmit(String email, String password) {
         emailField().sendKeys(email);
