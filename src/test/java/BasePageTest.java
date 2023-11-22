@@ -18,7 +18,7 @@ public class BasePageTest {
     public void setupTest() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://nphvsx5xpq.eu-west-1.awsapprunner.com/login");
+        driver.get("http://localhost:3000/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     @AfterMethod
