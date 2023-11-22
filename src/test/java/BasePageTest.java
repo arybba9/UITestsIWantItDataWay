@@ -6,6 +6,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import test.java.pages.BasePage;
+import test.java.pages.HomePage;
+import test.java.pages.JobRolesPage;
 import test.java.pages.LoginPage;
 
 import java.time.Duration;
@@ -49,7 +51,11 @@ public class BasePageTest {
 
         BasePage basePage = new BasePage(driver);
         basePage.clickOnHomeLink();
+        HomePage homePage = new HomePage(driver);
+        homePage.getHomePageTitle();
         basePage.clickLogOutButton();
+        homePage.clickHelloWorld();
+        login.getLoginTitle();
 
     }
 @Test
@@ -63,7 +69,12 @@ public class BasePageTest {
 
     BasePage basePage = new BasePage(driver);
     basePage.clickOnJobRolesLink();
+
+    JobRolesPage jobRolesPage = new JobRolesPage(driver);
+    jobRolesPage.getJobRolesTitle();
     basePage.clickLogOutButton();
+    basePage.clickOnJobRolesLink();
+    login.getLoginTitle();
 
 }
 }
