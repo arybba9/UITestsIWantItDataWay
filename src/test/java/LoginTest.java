@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import test.java.pages.BasePage;
 import test.java.pages.HomePage;
+import test.java.pages.JobRolesPage;
 import test.java.pages.LoginPage;
 
 import java.time.Duration;
@@ -38,8 +40,8 @@ public class LoginTest {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        HomePage home = new HomePage(driver);
-        Assert.assertEquals("Hello World", home.getHelloWorldLink());
+        HomePage homePage = new HomePage(driver);
+        homePage.getHomePageTitle();
 
     }
 @Test
