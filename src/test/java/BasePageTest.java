@@ -32,7 +32,7 @@ public class BasePageTest {
 
             login.clickOnLogInButton();
 
-            login.enterCredentialsAndClickSubmit("anna@kainos.com","Test15!!" );
+            login.enterCredentialsAndClickSubmit("anna@kainos.com",System.getenv("TEST_VALID_PASSWORD_API"));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
             BasePage basePage = new BasePage(driver);
@@ -46,7 +46,7 @@ public class BasePageTest {
 
         login.clickOnLogInButton();
 
-        login.enterCredentialsAndClickSubmit("anna@kainos.com","Test15!!" );
+        login.enterCredentialsAndClickSubmit("anna@kainos.com",System.getenv("TEST_VALID_PASSWORD_API"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         BasePage basePage = new BasePage(driver);
@@ -64,7 +64,7 @@ public class BasePageTest {
 
     login.clickOnLogInButton();
 
-    login.enterCredentialsAndClickSubmit("anna@kainos.com","Test15!!" );
+    login.enterCredentialsAndClickSubmit("anna@kainos.com",System.getenv("TEST_VALID_PASSWORD_API"));
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     BasePage basePage = new BasePage(driver);
