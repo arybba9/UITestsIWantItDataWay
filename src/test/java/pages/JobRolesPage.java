@@ -14,7 +14,7 @@ public class JobRolesPage extends BasePage {
         return this.driver.findElement(By.xpath("//h2[text()='Job Roles']"));
     }
 
-    private WebElement jobRolesTable() {
+    public WebElement jobRolesTable() {
         return this.driver.findElement(By.xpath("//*[@id=orders]/table"));
     }
 
@@ -22,6 +22,7 @@ public class JobRolesPage extends BasePage {
     public String getJobRolesTitle() {
         return jobRolesTitle().getText();
     }
+
 }
 
 
