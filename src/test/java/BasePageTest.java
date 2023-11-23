@@ -2,6 +2,7 @@ package test.java;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,9 +23,9 @@ public class BasePageTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     @AfterMethod
-        public void cleanUpTest() {
-            driver.quit();
-        }
+    public void cleanUpTest() {
+        driver.quit();
+    }
         @Test
         public void loggingOut () {
 
@@ -45,16 +46,14 @@ public class BasePageTest {
         LoginPage login = new LoginPage(driver);
 
         login.clickOnLogInButton();
-
         login.enterCredentialsAndClickSubmit("anna@kainos.com",System.getenv("TEST_VALID_PASSWORD_API"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         BasePage basePage = new BasePage(driver);
         basePage.clickOnHomeLink();
-        HomePage homePage = new HomePage(driver);
-        homePage.getHomePageTitle();
+
         basePage.clickLogOutButton();
-        homePage.clickHelloWorld();
+        basePage.clickOnJobRolesLink();
         login.getLoginTitle();
 
     }
